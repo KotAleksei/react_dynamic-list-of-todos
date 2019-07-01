@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-
+import { getTodos, getUsers } from './api';
 
 
 class  App extends React.Component {
   state = {
 
   }
-  componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/todos ')
-      .then(resp => resp.json())
-      .then(resp => console.log(resp));
+  async componentDidMount() {
+    const [ todos, users ] = await Promise.all([
+      getTodos(),
+      getUsers(),
+    ]);
   }
   render() {
     return (
