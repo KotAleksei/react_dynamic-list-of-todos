@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,4DAGI,cACJ,CACA,YACI,kBACJ,CACA,KACI,iBACJ","file":"main.4218d360.chunk.css","sourcesContent":[".nameHeader:hover,\n.titleHeader:hover,\n.completedHeader:hover {\n    cursor: pointer;\n}\n.headerGrid {\n    margin: 1rem 1rem 0 1rem;\n}\n.App {\n    text-align: center;\n}"]}
