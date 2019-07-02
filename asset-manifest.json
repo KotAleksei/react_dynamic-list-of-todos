@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react_dynamic-list-of-todos/static/css/main.ec2134a8.chunk.css",
-    "main.js": "/react_dynamic-list-of-todos/static/js/main.7e47a1fa.chunk.js",
-    "main.js.map": "/react_dynamic-list-of-todos/static/js/main.7e47a1fa.chunk.js.map",
+    "main.css": "/react_dynamic-list-of-todos/static/css/main.10410c63.chunk.css",
+    "main.js": "/react_dynamic-list-of-todos/static/js/main.c6c126c9.chunk.js",
+    "main.js.map": "/react_dynamic-list-of-todos/static/js/main.c6c126c9.chunk.js.map",
     "runtime~main.js": "/react_dynamic-list-of-todos/static/js/runtime~main.b6f1ef06.js",
     "runtime~main.js.map": "/react_dynamic-list-of-todos/static/js/runtime~main.b6f1ef06.js.map",
     "static/css/2.26b2b26b.chunk.css": "/react_dynamic-list-of-todos/static/css/2.26b2b26b.chunk.css",
-    "static/js/2.628a0e76.chunk.js": "/react_dynamic-list-of-todos/static/js/2.628a0e76.chunk.js",
-    "static/js/2.628a0e76.chunk.js.map": "/react_dynamic-list-of-todos/static/js/2.628a0e76.chunk.js.map",
+    "static/js/2.158d0e07.chunk.js": "/react_dynamic-list-of-todos/static/js/2.158d0e07.chunk.js",
+    "static/js/2.158d0e07.chunk.js.map": "/react_dynamic-list-of-todos/static/js/2.158d0e07.chunk.js.map",
     "index.html": "/react_dynamic-list-of-todos/index.html",
-    "precache-manifest.2571950b8d74cd14f2d5d00ba3cdbaeb.js": "/react_dynamic-list-of-todos/precache-manifest.2571950b8d74cd14f2d5d00ba3cdbaeb.js",
+    "precache-manifest.559de2d61c676723974dc6fd7a37c9a7.js": "/react_dynamic-list-of-todos/precache-manifest.559de2d61c676723974dc6fd7a37c9a7.js",
     "service-worker.js": "/react_dynamic-list-of-todos/service-worker.js",
     "static/css/2.26b2b26b.chunk.css.map": "/react_dynamic-list-of-todos/static/css/2.26b2b26b.chunk.css.map",
-    "static/css/main.ec2134a8.chunk.css.map": "/react_dynamic-list-of-todos/static/css/main.ec2134a8.chunk.css.map",
+    "static/css/main.10410c63.chunk.css.map": "/react_dynamic-list-of-todos/static/css/main.10410c63.chunk.css.map",
     "static/media/semantic.min.css": "/react_dynamic-list-of-todos/static/media/outline-icons.ef60a4f6.woff"
   }
 }
