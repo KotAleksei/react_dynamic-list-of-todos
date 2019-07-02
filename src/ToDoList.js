@@ -26,7 +26,7 @@ export class ToDoList  extends React.Component {
                         textAlign="center" 
                         onClick={() => {
                             this.setState((prevState) => ({el: !prevState.el})); 
-                            sortTodos(todos, this.state.name ? `${el}up` : `${el}down`)}
+                            sortTodos(todos, this.state.el ? `${el}up` : `${el}down`)}
                         }
                         className={`${el}Header`}
                         title='Push Me'
