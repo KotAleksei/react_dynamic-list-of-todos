@@ -4,10 +4,10 @@ import { Grid, Checkbox } from "semantic-ui-react";
 export const ToDoItem = (props) => {
     const { name, title, completed } = props;
     return (
-        <Grid.Row>
-            <Grid.Column width={6} textAlign="center">{name}</Grid.Column>
-            <Grid.Column width={6} textAlign="center">{title}</Grid.Column>
-            <Grid.Column width={4} textAlign="center">
+        <Grid.Row >
+            <Grid.Column width={6} textAlign="center" style={{border: '1px solid grey', padding: '10px'}}>{name}</Grid.Column>
+            <Grid.Column width={6} textAlign="center" style={{border: '1px solid grey', padding: '10px'}}>{title}</Grid.Column>
+            <Grid.Column width={4} textAlign="center" style={{border: '1px solid grey', padding: '10px'}}>
                 <Checkbox checked={completed} />
             </Grid.Column>
         </Grid.Row>

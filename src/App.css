@@ -9,12 +9,29 @@
 .completedHeader {
     padding: 10px;
 }
-.headerGrid {
-    margin: 1rem 1rem 0 1rem;
-    border-bottom: 1px solid grey;
-    background-color: whitesmoke;
+.ui.grid {
+    margin: 0px 0px 0px 0px !important;
+}
+.ui.grid > .row {
     padding: 0 !important;
 }
+.headerGrid {
+    border-bottom: 1px solid grey;
+    background-color: whitesmoke;
+
+}
 .App {
-    text-align: center;
+    /* text-align: center; */
+}
+.parentUsersToDo {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 20px 0;
+}
+.loadButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
