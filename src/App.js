@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { getTodos, getUsers } from './api';
-import { ToDoList } from './ToDoList';
+import { ToDoList } from './components/ToDoList';
 import { Button } from 'semantic-ui-react';
-import { sortTodos } from './sortTodos';
-import { Users } from './Users';
+import { sortTodos } from './components/sortTodos';
+import { Users } from './components/Users';
 class  App extends React.Component {
   state = {
     todos: [],
