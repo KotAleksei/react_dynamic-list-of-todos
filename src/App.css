@@ -1,0 +1,11 @@
+.nameHeader:hover,
+.titleHeader:hover,
+.completedHeader:hover {
+    cursor: pointer;
+}
+.headerGrid {
+    margin: 1rem 1rem 0 1rem;
+}
+.App {
+    text-align: center;
+}
