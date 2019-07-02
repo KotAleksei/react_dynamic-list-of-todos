@@ -57,4 +57,3 @@ class  App extends React.Component {
 }
 
 export default App;
-// <div style={{textAlign: 'center'}}>Loading...</div> 

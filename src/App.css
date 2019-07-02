@@ -2,9 +2,18 @@
 .titleHeader:hover,
 .completedHeader:hover {
     cursor: pointer;
+    background-color: wheat;
+}
+.nameHeader,
+.titleHeader,
+.completedHeader {
+    padding: 10px;
 }
 .headerGrid {
     margin: 1rem 1rem 0 1rem;
+    border-bottom: 1px solid grey;
+    background-color: whitesmoke;
+    padding: 0 !important;
 }
 .App {
     text-align: center;

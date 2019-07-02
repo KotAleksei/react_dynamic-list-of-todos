@@ -7,7 +7,7 @@ export const   sortTodos = (todos, sortField) => {
         completedup: (a,b) => a.completed - b.completed,
         completeddown: (a,b) => b.completed - a.completed,
     }
-    const callback = callbackMap[sortField] || callbackMap.title;
+    const callback = callbackMap[sortField];
     const copyTodos = [ ...todos];
     
     return copyTodos.sort(callback);

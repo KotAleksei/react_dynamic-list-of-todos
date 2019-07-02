@@ -25,8 +25,9 @@ export class ToDoList  extends React.Component {
                         width={index > 1 ? 4 : 6}  // на момент написания кода в масиве всего 3 эл. => общая сума должна быть 16, колонки разбиты на 6,6,4
                         textAlign="center" 
                         onClick={() => {
-                            this.setState((prevState) => ({el: !prevState.el})); 
-                            sortTodos(todos, this.state.el ? `${el}up` : `${el}down`)}
+                            sortTodos(todos, this.state[`${el}`] ? `${el}up` : `${el}down`);
+                            this.setState((prevState) => ({[`${el}`]: !prevState[`${el}`]})); 
+                            }
                         }
                         className={`${el}Header`}
                         title='Push Me'
