@@ -33,6 +33,16 @@ class  App extends React.Component {
       load: true
     });
   }
+  handleCheck = (obj) => {
+    const copy = { ...obj };
+    const copyTodos = this.state.todos;
+    
+    // сложный способ для понимания =(( , но пока не знаю как можно без мутации state сделать по другому
+    let completedTask = copyTodos.find(el => JSON.stringify(el) === JSON.stringify(copy)).completed;
+     copyTodos.find(el => JSON.stringify(el) === JSON.stringify(copy)).completed = !completedTask;
+    
+    this.setState({todos: copyTodos})
+  }
   render() {
     const { todos,users } = this.state;
     return (
@@ -44,6 +54,7 @@ class  App extends React.Component {
             <ToDoList
               todos={todos}
               sortTodos={this.sortedList}
+              handleCheck={this.handleCheck}
             /> 
           </div> :
           <Button 

@@ -16,6 +16,9 @@ export class ToDoList  extends React.Component {
         // event.stopPropagation();
         this.setState({ open: false })
     }
+    handleCheckItem = (obj) => {
+        this.props.handleCheck(obj)
+    }
     render() {
         const { todos, sortTodos } = this.props;
         const { open } = this.state;
@@ -65,6 +68,7 @@ export class ToDoList  extends React.Component {
                             name={todoEl.user.name}
                             title={todoEl.title}
                             completed={todoEl.completed}
+                            handleCheckItem={() => this.handleCheckItem(todoEl)}
                         />
                     ))
                 }
