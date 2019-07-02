@@ -5,32 +5,36 @@ import { ToDoItem } from './ToDoItem';
 
 
 export class ToDoList  extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: [...this.props.users],
-            todos: [...this.props.todos]
-        }
+    state = {
+        name: true,
+        title: true,
+        completed: true,
     }
-    sortTodos = (todos, sortField) => {
-        const callbackMap = {
-            title: (a,b) => a.title.localeCompare(b.title),
-            // name: (a,b) => a.user.name.localeCompare(b.user.name),
-            completed: (a,b) => a.completed - b.completed
-        }
-        const callback = callbackMap[sortField] || callbackMap.title;
-        // console.log(todos);
-        return todos.sort(callback);
-    }
+
     render() {
-        const { todos, users } = this.props;
+        const { todos, sortTodos } = this.props;
+        const staticHeader =  ['name', 'title', 'completed']; 
     return (
         <>
         <Grid>
-            <Grid.Row>
-                <GridColumn computer={6} textAlign="center" onClick={() => this.sortTodos(todos, 'name')}>Name</GridColumn>
-                <GridColumn computer={6} textAlign="center" onClick={() => this.sortTodos(todos, 'title')}>Title</GridColumn>
-                <GridColumn computer={4} textAlign="center" onClick={() => this.sortTodos(todos, 'completed')}>Completed</GridColumn>
+            <Grid.Row className='headerGrid'>
+                {
+                    staticHeader.map((el, index) => (
+                    <GridColumn 
+                        key={index}
+                        width={index > 1 ? 4 : 6}  // на момент написания кода в масиве всего 3 эл. => общая сума должна быть 16, колонки разбиты на 6,6,4
+                        textAlign="center" 
+                        onClick={() => {
+                            this.setState((prevState) => ({el: !prevState.el})); 
+                            sortTodos(todos, this.state.name ? `${el}up` : `${el}down`)}
+                        }
+                        className={`${el}Header`}
+                        title='Push Me'
+                    >
+                        {el[0].toUpperCase() + el.slice(1)} 
+                    </GridColumn>
+                    ))
+                }
             </Grid.Row>
         </Grid>
         <Grid>
@@ -38,7 +42,7 @@ export class ToDoList  extends React.Component {
             todos.map((todoEl, index) => (
                 <ToDoItem 
                     key={index}
-                    name={users.find(userEl => userEl.id === todoEl.userId).name}
+                    name={todoEl.user.name}
                     title={todoEl.title}
                     completed={todoEl.completed}
                 />
