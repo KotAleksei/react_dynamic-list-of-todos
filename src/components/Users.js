@@ -15,6 +15,7 @@ export class Users extends React.Component {
             <div>
             <Dropdown text='Users' style={{border: '1px solid rgba(34,36,38,.15)', padding: '10px'}}>
                 <Dropdown.Menu>
+                <Dropdown.Item text='All Users' onClick={() => this.setState({user: [ ...users ], open: true}) }/>
                 {
                     users.map((el, index) => (
                         <Dropdown.Item 
@@ -41,9 +42,10 @@ export class Users extends React.Component {
                     </Grid.Row>
                 </Grid>
                 <Grid>
-                    <Grid.Row>
-                    {
-                        Object.keys(user).map((el,index) => (
+                    {   !Array.isArray(user) ?
+                        <Grid.Row>
+                         {
+                             Object.keys(user).map((el,index) => (
                             <Grid.Column computer={2} mobile={4} key={index} style={{border: '1px solid grey', padding: '10px'}}>
                             {
                                 el === 'address' ? user[el].city : 
@@ -51,9 +53,26 @@ export class Users extends React.Component {
                                 user[el]
                             } 
                             </Grid.Column>
+                            ))
+                        }
+                        </Grid.Row> :
+                        user.map((userEl,indexEl) => (
+                            <Grid.Row key={indexEl}>
+                            {
+                                Object.keys(userEl).map((el,index) => (
+                                <Grid.Column computer={2} mobile={4} key={index} style={{border: '1px solid grey', padding: '10px'}}>
+                                {
+                                    el === 'address' ? userEl[el].city : 
+                                    el === 'company' ? userEl[el].name :
+                                    userEl[el]
+                                } 
+                                </Grid.Column>
+                                ))
+                            }
+                            </Grid.Row>
                         ))
                     }
-                    </Grid.Row>
+                    
                 </Grid>
             </div>
             </TransitionablePortal>
