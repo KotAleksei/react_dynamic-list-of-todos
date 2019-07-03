@@ -35,9 +35,9 @@ class  App extends React.Component {
   }
   handleCheck = (obj) => {
     const copy = { ...obj };
-    const copyTodos = this.state.todos;
+    const copyTodos  = [ ...this.state.todos ];
     
-    // сложный способ для понимания =(( , но пока не знаю как можно без мутации state сделать по другому
+
     let completedTask = copyTodos.find(el => JSON.stringify(el) === JSON.stringify(copy)).completed;
      copyTodos.find(el => JSON.stringify(el) === JSON.stringify(copy)).completed = !completedTask;
     
