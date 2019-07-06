@@ -5,9 +5,9 @@ export const ToDoItem = (props) => {
     const { name, title, completed, handleCheckItem } = props;
     return (
         <Grid.Row >
-            <Grid.Column width={6} textAlign="center" style={{border: '1px solid grey', padding: '10px'}}>{name}</Grid.Column>
-            <Grid.Column width={6} textAlign="center" style={{border: '1px solid grey', padding: '10px'}}>{title}</Grid.Column>
-            <Grid.Column width={4} textAlign="center" style={{border: '1px solid grey', padding: '10px'}}>
+            <Grid.Column width={6} className="toDoItemColumnStyle">{name}</Grid.Column>
+            <Grid.Column width={6} className="toDoItemColumnStyle">{title}</Grid.Column>
+            <Grid.Column width={4} className="toDoItemColumnStyle">
                 <Checkbox checked={completed} onClick={handleCheckItem}/>
             </Grid.Column>
         </Grid.Row>

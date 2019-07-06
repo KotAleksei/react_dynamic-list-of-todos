@@ -13,7 +13,7 @@ export class Users extends React.Component {
         const staticHeader = ['id', 'Name', 'Username', 'Email', 'City','Phone', 'Website', 'Company'];
         return (
             <div>
-            <Dropdown text='Users' style={{border: '1px solid rgba(34,36,38,.15)', padding: '10px'}}>
+            <Dropdown text='Users' className="dropDownTittle">
                 <Dropdown.Menu>
                 <Dropdown.Item text='All Users' onClick={() => this.setState({user: [ ...users ], open: true}) }/>
                 {
@@ -34,7 +34,7 @@ export class Users extends React.Component {
                     <Grid.Row>
                     {
                         staticHeader.map((el,index) => (
-                            <Grid.Column computer={2} mobile={4} key={index} style={{border: '1px solid grey', padding: '10px'}}>
+                            <Grid.Column computer={2} mobile={4} key={index} className="userColumnStyle">
                                 {el}
                             </Grid.Column>
                         ))
@@ -46,7 +46,7 @@ export class Users extends React.Component {
                         <Grid.Row>
                          {
                              Object.keys(user).map((el,index) => (
-                            <Grid.Column computer={2} mobile={4} key={index} style={{border: '1px solid grey', padding: '10px'}}>
+                            <Grid.Column computer={2} mobile={4} key={index} className="userColumnStyle">
                             {
                                 el === 'address' ? user[el].city : 
                                 el === 'company' ? user[el].name :
@@ -60,7 +60,7 @@ export class Users extends React.Component {
                             <Grid.Row key={indexEl}>
                             {
                                 Object.keys(userEl).map((el,index) => (
-                                <Grid.Column computer={2} mobile={4} key={index} style={{border: '1px solid grey', padding: '10px'}}>
+                                <Grid.Column computer={2} mobile={4} key={index} className="userColumnStyle">
                                 {
                                     el === 'address' ? userEl[el].city : 
                                     el === 'company' ? userEl[el].name :

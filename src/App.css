@@ -8,6 +8,7 @@
 .titleHeader,
 .completedHeader {
     padding: 10px;
+    text-transform: capitalize;
 }
 .ui.grid {
     margin: 0px 0px 0px 0px !important;
@@ -20,9 +21,6 @@
     background-color: whitesmoke;
 
 }
-.App {
-    /* text-align: center; */
-}
 .parentUsersToDo {
     display: flex;
     justify-content: space-evenly;
@@ -34,4 +32,18 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+.toDoItemColumnStyle {
+    border: 1px solid grey; 
+    padding: 10px;
+    text-align: center;
+}
+.dropDownTittle {
+   border: 1px solid rgba(34,36,38,.15); 
+   padding: 10px;
+}
+.userColumnStyle {
+    border: 1px solid grey; 
+    padding: 10px;
+    text-align: center;
 }
