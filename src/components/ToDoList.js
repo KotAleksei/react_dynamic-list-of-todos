@@ -12,10 +12,8 @@ export class ToDoList  extends React.Component {
         completed: true,
         open: false
     }
-    handleClose = (event) => {
-        // event.stopPropagation();
-        this.setState({ open: false })
-    }
+    handleClose = () => this.setState({ open: false })
+    
     handleCheckItem = (obj) => {
         this.props.handleCheck(obj)
     }
@@ -25,12 +23,11 @@ export class ToDoList  extends React.Component {
         const staticHeader =  ['name', 'title', 'completed']; 
     return (
         <div >
-        <Dropdown text='ToDoList' style={{border: '1px solid rgba(34,36,38,.15)', padding: '10px'}}>
+        <Dropdown text='ToDoList' className="dropDownTittle">
             <Dropdown.Menu >
                 <Dropdown.Item 
                     text="ToDoList" 
-                    onClick={(event) => {
-                        // event.stopPropagation(); 
+                    onClick={(event) => {                        
                         this.setState(prevState => ({open: !prevState.open}))}
                     } 
                 />
@@ -41,22 +38,23 @@ export class ToDoList  extends React.Component {
                 <Grid>
                     <Grid.Row className='headerGrid'>
                         {
-                            staticHeader.map((el, index) => (
-                            <GridColumn 
-                                key={index}
-                                width={index > 1 ? 4 : 6}  // на момент написания кода в масиве всего 3 эл. => общая сума должна быть 16, колонки разбиты на 6,6,4
-                                textAlign="center" 
-                                onClick={() => {
-                                    sortTodos(todos, this.state[el] ? `${el}up` : `${el}down`);
-                                    this.setState((prevState) => ({[el]: !prevState[el]})); 
-                                    }
-                                }
-                                className={`${el}Header`}
-                                title='Push Me'
-                            >
-                                {el[0].toUpperCase() + el.slice(1)} 
-                            </GridColumn>
-                            ))
+                            staticHeader.map((el, index) => {
+                                return (
+                                    <GridColumn 
+                                        key={index}
+                                        width={index > 1 ? 4 : 6}  // на момент написания кода в масиве всего 3 эл. => общая сума должна быть 16, колонки разбиты на 6,6,4
+                                        textAlign="center" 
+                                        onClick={() => {
+                                            sortTodos(todos, `${el}`);
+                                            }
+                                        }
+                                        className={`${el}Header`}
+                                        title='Push Me'
+                                    >
+                                        {el} 
+                                    </GridColumn>
+                                )
+                            })
                         }
                     </Grid.Row>
                 </Grid>

@@ -11,10 +11,15 @@ class  App extends React.Component {
     users: [],
     load: false,
     buttonInnerText: 'Load Data',
-    disableButton: false
+    disableButton: false,
+    sortDirection: 1
   }
   sortedList = (array,sortField) => {
-    this.setState({ todos: sortTodos(array, sortField) })
+    const { sortDirection } = this.state;
+    this.setState((prevState) => ({ 
+      todos: sortTodos(array, sortField, sortDirection), 
+      sortDirection: -prevState.sortDirection
+    }))
   }
   async loadInformation() {
     this.setState({
@@ -25,8 +30,11 @@ class  App extends React.Component {
       getTodos(),
       getUsers(),
     ]);
-    const fullArr = [ ...todos];
-    fullArr.map(el => el.user = users.find(user => user.id === el.userId));
+    const fullArr =  todos.map(el => ({
+      ...el,
+      user: users.find(user => user.id === el.userId)
+    }));
+
     this.setState({
       todos: fullArr,
       users,
@@ -36,10 +44,9 @@ class  App extends React.Component {
   handleCheck = (obj) => {
     const copy = { ...obj };
     const copyTodos  = [ ...this.state.todos ];
-    
 
-    let completedTask = copyTodos.find(el => JSON.stringify(el) === JSON.stringify(copy)).completed;
-     copyTodos.find(el => JSON.stringify(el) === JSON.stringify(copy)).completed = !completedTask;
+    let completedTask = copyTodos.find(el => el.id === copy.id).completed;
+     copyTodos.find(el => el.id === copy.id).completed = !completedTask;
     
     this.setState({todos: copyTodos})
   }
