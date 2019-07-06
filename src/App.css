@@ -1,0 +1,49 @@
+.nameHeader:hover,
+.titleHeader:hover,
+.completedHeader:hover {
+    cursor: pointer;
+    background-color: wheat;
+}
+.nameHeader,
+.titleHeader,
+.completedHeader {
+    padding: 10px;
+    text-transform: capitalize;
+}
+.ui.grid {
+    margin: 0px 0px 0px 0px !important;
+}
+.ui.grid > .row {
+    padding: 0 !important;
+}
+.headerGrid {
+    border-bottom: 1px solid grey;
+    background-color: whitesmoke;
+
+}
+.parentUsersToDo {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 20px 0;
+}
+.loadButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.toDoItemColumnStyle {
+    border: 1px solid grey; 
+    padding: 10px;
+    text-align: center;
+}
+.dropDownTittle {
+   border: 1px solid rgba(34,36,38,.15); 
+   padding: 10px;
+}
+.userColumnStyle {
+    border: 1px solid grey; 
+    padding: 10px;
+    text-align: center;
+}
