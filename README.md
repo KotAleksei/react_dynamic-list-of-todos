@@ -1,4 +1,4 @@
-## [Demo] (https://kotaleksei.github.io/react_dynamic-list-of-todos/)
+## [Demo](https://kotaleksei.github.io/react_dynamic-list-of-todos/)
 
 
 
